@@ -1,0 +1,21 @@
+name: fortune-go
+version: 1
+vendor: Shuduo Sang <shuduo.sang@canonical.com>
+binaries:
+  fortune-go:
+    exec: ./bin/fortune-go fortunes.txt
+summary: fortune program in go
+description: fortune program in go
+icon: icon.png
+
+parts:
+  fortune-go:
+    plugin: go
+    source: git://github.com/bmc/fortune-go
+    snap:
+     - bin/fortune-go*
+  datafile:
+    plugin: copy
+    files:
+       fortunes.txt: fortunes.txt
+       LICENSE.md: LICENSE.md
